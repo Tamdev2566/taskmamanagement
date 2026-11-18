@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Apple macOS Sonoma / Sequoia Design System
+   ========================================================================== */
+
+:root {
+  --mac-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mac-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --mac-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mac-blue: #0071e3;
+  --mac-radius-sm: 8px;
+  --mac-radius-md: 12px;
+  --mac-radius-lg: 16px;
+  --mac-radius-xl: 20px;
+}
+
+html {
+  font-family: var(--mac-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--mac-font);
+  letter-spacing: -0.01em;
+  transition: background-color 0.25s var(--mac-ease), color 0.25s ease;
+}
+
+body.light-mode {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
+
+body.dark-mode {
+  background-color: #131316;
+  color: #f5f5f7;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--mac-mono);
+}
+
+/* macOS Text Selection */
+::selection {
+  background-color: rgba(10, 132, 255, 0.35);
+  color: inherit;
+}
+
+/* macOS Ultra-Clean Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 128, 0.22);
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 128, 0.45);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Apple Translucent Window Materials (Vibrancy) */
+.mac-window {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .mac-window {
+  background: rgba(28, 28, 33, 0.85);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Apple Pro Card */
+.mac-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mac-card:hover {
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1.5px);
+}
+
+.dark .mac-card {
+  background: #1c1c21;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.dark .mac-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* macOS Interactive Traffic Light Dots */
+.mac-traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.mac-traffic-light:hover {
+  transform: scale(1.12);
+}
+
+.mac-traffic-close {
+  background-color: #ff5f56;
+  border: 0.5px solid #e0443e;
+}
+
+.mac-traffic-min {
+  background-color: #ffbd2e;
+  border: 0.5px solid #dea123;
+}
+
+.mac-traffic-max {
+  background-color: #27c93f;
+  border: 0.5px solid #1aab29;
+}
